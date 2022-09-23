@@ -1,0 +1,276 @@
+#include <iostream>
+using namespace std;
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+
+    //creación del tablero
+    // a | b | c
+    //-----------
+    // d | e | f
+    //-----------
+    // g | h | i
+
+    cout << "Tres en Raya" << endl << "Alumno 1: Olga Angelica Barreros Rodriguez" << endl << "Alumno 2: Sergio Manuel Sirena Malaga" << endl;
+
+
+    char a = 'a';
+    char b = 'b';
+    char c = 'c';
+    char d = 'd';
+    char e = 'e';
+    char f = 'f';
+    char g = 'g';
+    char h = 'h';
+    char i = 'i';
+    char j1;
+    char j2;
+    bool m = false;
+    
+
+    //imprimimos el tablero
+
+    cout << "Aqui les mostraremos como funcionara el tablero: " << endl << endl;
+    cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+
+
+    //pedir x o 0
+
+    cout << "Jugador 1 : ingrese si quiere jugar con X o O " << endl;
+    cin >> j1;
+    if((j1 == 'X') || (j1 == 'O')){
+        if (j1 == 'X') {
+            j2 = 'O';
+
+        }
+        else if (j1 == 'O') {
+            j2 = 'X';
+        }
+
+        cout << "El jugador 1 es:" << j1 << endl << "La maquina es :" << j2 << endl;
+
+    a = ' ';
+    b = ' ';
+    c = ' ';
+    d = ' ';
+    e = ' ';
+    f = ' ';
+    g = ' ';
+    h = ' ';
+    i = ' ';
+    char pos1;
+    char pos2;
+    int contador = 1;
+    
+    while (contador <=9) {
+        if (contador % 2 == 1) {
+            cout << "Jugador 1 ,Ingrese la posicion:" << endl;
+            cin >> pos1;
+            system("cls");
+            if (pos1 == 'a') {
+                a = j1;
+                system("cls");
+            }
+
+
+            else if (pos1 == 'b') {
+                b = j1;
+                system("cls");
+            }
+            
+            else if (pos1 == 'c') {
+                c = j1;
+                system("cls");
+            }
+           
+            else if (pos1 == 'd') {
+                d = j1;
+                system("cls");
+            }
+            
+            else if (pos1 == 'e') {
+                e = j1;
+                system("cls");
+            }
+            
+            else if (pos1 == 'f') {
+                f = j1;
+                system("cls");
+            }
+            
+            else if (pos1 == 'g') {
+                g = j1;
+                system("cls");
+            }
+           
+            else if (pos1 == 'h') {
+                h = j1;
+                system("cls");
+            }
+           
+
+            else if (pos1 == 'i') {
+                i = j1;
+                system("cls");
+            }
+            
+
+        }
+
+
+        else {
+            if (contador % 2 == 0) {
+                cout << "La maquina esta pensando..." << endl;
+                srand(time(NULL)); 
+                int jugada_m = rand()% 10;
+
+                if (jugada_m == 0){
+                    continue;
+                }
+
+                else if (jugada_m == 1) {
+                    a = j2;
+                    system("cls");
+                }
+                
+                else if (jugada_m == 2) {
+                    b = j2;
+                    system("cls");
+                }
+                else if (jugada_m == 3) {
+                    c = j2;
+                    system("cls");
+                }
+                else if (jugada_m == 4) {
+                    d = j2;
+                    system("cls");
+                }
+                else if (jugada_m == 5) {
+                    e = j2;
+                    system("cls");
+                }
+                else if (jugada_m == 6) {
+                    f = j2;
+                    system("cls");
+                }
+                else if (jugada_m == 7) {
+                    g = j2;
+                    system("cls");
+                }
+                else if (jugada_m == 8) {
+                    h = j2;
+                    system("cls");
+                }
+                else if (jugada_m == 9) {
+                    i = j2;
+                    system("cls");
+                }
+
+            }
+
+
+        }
+        contador = contador + 1;
+
+        cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+
+        if ((a == j1) && (b == j1) && (c == j1)) {
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((d == j1) && (e == j1) && (f == j1)) {
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((g == j1) && (h == j1) && (i == j1)) {
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((a == j1) && (e == j1) && (i == j1)) {
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((a == j1) && (d == j1) && (g == j1)) {
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((b == j1) && (e == j1) && (h == j1)) {
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((c == j1) && (f == j1) && (i == j1)) {
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((c == j1) && (e == j1) && (g == j1)) {
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+
+        if ((a == j2) && (b == j2) && (c == j2)) {
+            cout << "Gano la maquina ";
+            m = true;
+            break;
+        }
+        if ((d == j2) && (e == j2) && (f == j2)) {
+            cout << "Gano la maquina  ";
+            m = true;
+            break;
+        }
+        if ((g == j2) && (h == j2) && (i == j2)) {
+            cout << "Gano la maquina  ";
+            m = true;
+            break;
+        }
+        if ((a == j2) && (e == j2) && (i == j2)) {
+            cout << "Gano la maquina ";
+            m = true;
+            break;
+        }
+        if ((a == j2) && (d == j2) && (g == j2)) {
+            cout << "Gano la maquina  ";
+            m = true;
+            break;
+        }
+        if ((b == j2) && (e == j2) && (h == j2)) {
+            cout << "Gano la maquina ";
+            m = true;
+            break;
+        }
+        if ((c == j2) && (f == j2) && (i == j2)) {
+            cout << "Gano la maquina ";
+            m = true;
+            break;
+        }
+        if ((c == j2) && (e == j2) && (g == j2)) {
+            cout << "Gano la maquina  ";
+            m = true;
+            break;
+        }
+        
+    }
+
+}
+
+        
+    else{
+        cout << "\aLos valores no son validos";
+
+    }
+
+    if(m == false){
+    cout << "EMPATEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"<< endl;
+}
+    return 0;
+
+
+}
