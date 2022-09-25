@@ -1,0 +1,3152 @@
+#include <iostream>
+using namespace std;
+#include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
+#include <Windows.h>
+
+int main() {
+
+    //creación del tablero
+    // a | b | c
+    //-----------
+    // d | e | f
+    //-----------
+    // g | h | i
+	cout << "///////////////////////////////////////////" << endl;
+    cout << "                " << "3 en raya" << "            " << endl; //9
+	cout << "       " << "Olga Barreros y Sergio Sirena" << endl; //36
+	cout << "///////////////////////////////////////////" << endl;
+
+
+    char a = 'a';
+    char b = 'b';
+    char c = 'c';
+    char d = 'd';
+    char e = 'e';
+    char f = 'f';
+    char g = 'g';
+    char h = 'h';
+    char i = 'i';
+    char j1;
+    char j2;
+    bool m = false;
+    bool pos_a = false;
+    bool pos_b = false;
+    bool pos_c = false;
+    bool pos_d = false;
+    bool pos_e = false;
+    bool pos_f = false;
+    bool pos_g = false;
+    bool pos_h = false;
+    bool pos_i = false;
+	int dificultad;
+    char primera_jugada;
+	bool p = false;
+
+    //imprimimos el tablero
+
+    cout << "Asi es como funciona el tablero: " << endl << endl;
+    cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+	usleep(5000000);
+	system("cls");
+	//Preguntar dificultad
+	cout << "///////////////////////////////////////" << endl;
+	cout << "Seleccione la dificultad : " << endl;
+	cout <<"1 vs 1 : 0" << endl << "1 vs maquina(facil) : 1" << endl << "1 vs maquina(medio) : 2" << endl << "1 vs maquina(dificil) : 3" << endl;
+	cout << "///////////////////////////////////////" << endl;
+    cin >> dificultad;
+	system("cls");
+	
+	//1 VS 1
+	
+	if(dificultad == 0){
+		cout << "Jugador 1 : ingrese si quiere jugar con X o O " << endl;
+		cin >> j1;
+		if((j1 == 'X') || (j1 == 'O')){
+			if (j1 == 'X') {
+				j2 = 'O';
+
+			}
+		
+			else if (j1 == 'O') {
+				j2 = 'X';
+			}
+
+			cout << "El jugador 1 es:" << j1 << endl << "El jugador 2 :" << j2 << endl;
+
+		a = ' ';
+		b = ' ';
+		c = ' ';
+		d = ' ';
+		e = ' ';
+		f = ' ';
+		g = ' ';
+		h = ' ';
+		i = ' ';
+
+		char pos1;
+		char pos2;
+		int contador = 1;
+		
+		while (contador <=9) {
+			while(contador % 2 == 1){
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Jugador 1 ,Ingrese la posicion:" << endl;
+				cin >> pos1;
+				system("cls");
+				
+				if((pos_a == true) && (pos_b == true) && (pos_c == true) && (pos_d == true) && (pos_e == true) && (pos_f == true) && (pos_g == true) && (pos_h == true) && (pos_i == true)){
+					cout << "Empate" << endl;
+					break;
+				}
+					
+				else if ((pos1 == 'a') && (pos_a == false)) {
+					a = j1;
+					pos_a = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'a') && (pos_a == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}			
+
+
+				else if ((pos1 == 'b') && (pos_b == false)) {
+					b = j1;
+					pos_b = true;
+					contador = contador + 1;
+					system("cls");
+
+				}
+				else if ((pos1 == 'b') && (pos_b == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}	
+					
+					
+					
+				else if ((pos1 == 'c') && (pos_c == false)) {
+					c = j1;
+					pos_c = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'c') && (pos_c == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}	
+				   
+				   
+				else if ((pos1 == 'd') && (pos_d == false)) {
+					d = j1;
+					pos_d = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'd') && (pos_d == true)){
+						cout << "La casilla esta ocupada" << endl;
+					continue;
+				}	
+					
+				else if ((pos1 == 'e') && (pos_e == false)) {
+					e = j1;
+					pos_e = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'e') && (pos_e == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}
+
+					
+					
+				else if ((pos1 == 'f') && (pos_f == false)) {
+					f = j1;
+					pos_f = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'f') && (pos_f == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}	
+					
+					
+					
+				else if ((pos1 == 'g') && (pos_g == false)) {
+					g = j1;
+					pos_g = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'g') && (pos_g == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}
+
+					
+				   
+				else if ((pos1 == 'h') && (pos_h == false)) {
+					h = j1;
+					pos_h = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'h') && (pos_h == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}	
+				  
+
+
+				else if ((pos1 == 'i') && (pos_i == false)) {
+					i = j1;
+					pos_i = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'i') && (pos_i == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}	
+					
+				
+			}
+			
+			
+			
+				if ((a == j1) && (b == j1) && (c == j1)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					cout << "Gano el Jugador 1 ";
+					m = true;
+					break;
+				}
+				if ((d == j1) && (e == j1) && (f == j1)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					cout << "Gano el Jugador 1 ";
+					m = true;
+					break;
+				}
+				if ((g == j1) && (h == j1) && (i == j1)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					cout << "Gano el Jugador 1 ";
+					m = true;
+					break;
+				}
+				if ((a == j1) && (e == j1) && (i == j1)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					cout << "Gano el Jugador 1 ";
+					m = true;
+					break;
+				}
+				if ((a == j1) && (d == j1) && (g == j1)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					cout << "Gano el Jugador 1 ";
+					m = true;
+					break;
+				}
+				if ((b == j1) && (e == j1) && (h == j1)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					cout << "Gano el Jugador 1 ";
+					m = true;
+					break;
+				}
+				if ((c == j1) && (f == j1) && (i == j1)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					cout << "Gano el Jugador 1 ";
+					m = true;
+					break;
+				}
+				if ((c == j1) && (e == j1) && (g == j1)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					cout << "Gano el Jugador 1 ";
+					m = true;
+					break;
+				}
+			
+			while(contador % 2 == 0){
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				
+				if((pos_a == true) && (pos_b == true) && (pos_c == true) && (pos_d == true) && (pos_e == true) && (pos_f == true) && (pos_g == true) && (pos_h == true) && (pos_i == true)){
+					cout << "Empate" << endl;
+					break;
+				}
+
+				else{
+					cout<< "Jugador 2 ingrese su jugada: "<< endl;
+					cin >> pos2;
+					system("cls");
+																		
+					if ((pos2 == 'a') && (pos_a == false)) {
+						a = j2;
+						pos_a = true;
+						contador = contador + 1;
+						system("cls");					
+					}
+					else if ((pos2 == 'a') && (pos_a == true)){
+						cout << "La casilla esta ocupada" << endl;
+						continue;
+					}
+							
+					else if ((pos2 == 'b') && (pos_b == false)) {
+						b = j2;
+						pos_b = true;
+						contador = contador + 1;
+						system("cls");
+					}
+					else if ((pos2 == 'b') && (pos_b == true)){
+						cout << "La casilla esta ocupada" << endl;
+						continue;
+					}
+							
+							
+							
+					else if ((pos2 == 'c') && (pos_c == false)) {
+						c = j2;
+						pos_c = true;
+						contador = contador + 1;
+						system("cls");			
+					}				
+					else if ((pos2 == 'c') && (pos_c == true)){
+						cout << "La casilla esta ocupada" << endl;
+							continue;					
+					}
+							
+							
+					else if ((pos2 == 'd') && (pos_d == false)) {
+						d = j2;
+						pos_d = true;
+						contador = contador + 1;
+						system("cls");
+					}
+					else if ((pos2 == 'd') && (pos_d == true)){
+						cout << "La casilla esta ocupada" << endl;
+						continue;
+					}
+							
+							
+							
+					else if ((pos2 == 'e') && (pos_e == false)) {
+						e = j2;
+						pos_e = true;
+						contador = contador + 1;
+						system("cls");
+					}
+					else if ((pos2 == 'e') && (pos_e == true)){
+						cout << "La casilla esta ocupada" << endl;
+						continue;
+					}
+							
+							
+							
+					else if ((pos2 == 'f') && (pos_f == false)) {
+						f = j2;
+						pos_f = true;
+						contador = contador + 1;
+						system("cls");
+					}
+					else if ((pos2 == 'f') && (pos_f == true)){
+						cout << "La casilla esta ocupada" << endl;
+						continue;
+					}
+							
+							
+							
+					else if ((pos2 == 'g') && (pos_g == false)) {
+						g = j2;
+						pos_g = true;
+						contador = contador + 1;
+						system("cls");
+					}
+					else if ((pos2 == 'g') && (pos_g == true)){
+						cout << "La casilla esta ocupada" << endl;
+						continue;
+					}
+							
+							
+					else if ((pos2 == 'h') && (pos_h == false)) {
+						h = j2;
+						pos_h = true;
+						contador = contador + 1;
+						system("cls");
+					}
+					else if ((pos2 == 'h') && (pos_h == true)){
+						cout << "La casilla esta ocupada" << endl;
+						continue;
+					}
+							
+							
+							
+					else if ((pos2 == 'i') && (pos_i == false)) {
+						i = j2;
+						pos_i = true;
+						contador = contador + 1;
+						system("cls");
+					}
+					else if ((pos2 == 'i') && (pos_i == true)){
+						cout << "La casilla esta ocupada" << endl;
+						continue;
+					}
+				}
+				
+					
+				}
+		
+
+				if ((a == j2) && (b == j2) && (c == j2)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					cout << "Gano el jugador 2";
+					m = true;
+					break;
+				}
+				if ((d == j2) && (e == j2) && (f == j2)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					cout << "Gano el jugador 2";
+					m = true;
+					break;
+				}
+				if ((g == j2) && (h == j2) && (i == j2)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					cout << "Gano el jugador 2";
+					m = true;
+					break;
+				}
+				if ((a == j2) && (e == j2) && (i == j2)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					cout << "Gano el jugador 2";
+					m = true;
+					break;
+				}
+				if ((a == j2) && (d == j2) && (g == j2)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					cout << "Gano el jugador 2";
+					m = true;
+					break;
+				}
+				if ((b == j2) && (e == j2) && (h == j2)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					cout << "Gano el jugador 2";
+					m = true;
+					break;
+				}
+				if ((c == j2) && (f == j2) && (i == j2)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					cout << "Gano el jugador 2";
+					m = true;
+					break;
+				}
+				if ((c == j2) && (e == j2) && (g == j2)) {
+					cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+					
+					cout << "Gano el jugador 2";
+					m = true;
+					break;
+				}
+
+		}
+		}
+		else{
+			cout << "\aLos valores no son validos";
+
+		}
+	
+	}
+	
+	//MAQUINA FACIL
+	
+	else if(dificultad == 1){
+	//pedir x o 0
+
+		cout << "Jugador 1 : ingrese si quiere jugar con X o O " << endl;
+		cin >> j1;
+		if((j1 == 'X') || (j1 == 'O')){
+			if (j1 == 'X') {
+				j2 = 'O';
+
+			}
+		
+			else if (j1 == 'O') {
+				j2 = 'X';
+			}
+
+			cout << "El jugador 1 es:" << j1 << endl << "La maquina es :" << j2 << endl;
+
+		a = ' ';
+		b = ' ';
+		c = ' ';
+		d = ' ';
+		e = ' ';
+		f = ' ';
+		g = ' ';
+		h = ' ';
+		i = ' ';
+
+		char pos1;
+		char pos2;
+		int contador = 1;
+		
+		while (contador <=9) {
+			while(contador % 2 == 1){
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Jugador 1 ,Ingrese la posicion:" << endl;
+				cin >> pos1;
+				system("cls");
+					
+				if ((pos1 == 'a') && (pos_a == false)) {
+					a = j1;
+					pos_a = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'a') && (pos_a == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}			
+
+
+				else if ((pos1 == 'b') && (pos_b == false)) {
+					b = j1;
+					pos_b = true;
+					contador = contador + 1;
+					system("cls");
+
+				}
+				else if ((pos1 == 'b') && (pos_b == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}	
+					
+					
+					
+				else if ((pos1 == 'c') && (pos_c == false)) {
+					c = j1;
+					pos_c = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'c') && (pos_c == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}	
+				   
+				   
+				else if ((pos1 == 'd') && (pos_d == false)) {
+					d = j1;
+					pos_d = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'd') && (pos_d == true)){
+						cout << "La casilla esta ocupada" << endl;
+					continue;
+				}	
+					
+				else if ((pos1 == 'e') && (pos_e == false)) {
+					e = j1;
+					pos_e = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'e') && (pos_e == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}
+
+					
+					
+				else if ((pos1 == 'f') && (pos_f == false)) {
+					f = j1;
+					pos_f = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'f') && (pos_f == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}	
+					
+					
+					
+				else if ((pos1 == 'g') && (pos_g == false)) {
+					g = j1;
+					pos_g = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'g') && (pos_g == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}
+
+					
+				   
+				else if ((pos1 == 'h') && (pos_h == false)) {
+					h = j1;
+					pos_h = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'h') && (pos_h == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}	
+				  
+
+
+				else if ((pos1 == 'i') && (pos_i == false)) {
+					i = j1;
+					pos_i = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((pos1 == 'i') && (pos_i == true)){
+					cout << "La casilla esta ocupada" << endl;
+					continue;
+				}	
+					
+				
+			}
+			
+			if ((a == j1) && (b == j1) && (c == j1)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano el Jugador 1 ";
+				m = true;
+				break;
+			}
+			if ((d == j1) && (e == j1) && (f == j1)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano el Jugador 1 ";
+				m = true;
+				break;
+			}
+			if ((g == j1) && (h == j1) && (i == j1)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano el Jugador 1 ";
+				m = true;
+				break;
+			}
+			if ((a == j1) && (e == j1) && (i == j1)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano el Jugador 1 ";
+				m = true;
+				break;
+			}
+			if ((a == j1) && (d == j1) && (g == j1)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano el Jugador 1 ";
+				m = true;
+				break;
+			}
+			if ((b == j1) && (e == j1) && (h == j1)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano el Jugador 1 ";
+				m = true;
+				break;
+			}
+			if ((c == j1) && (f == j1) && (i == j1)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano el Jugador 1 ";
+				m = true;
+				break;
+			}
+			if ((c == j1) && (e == j1) && (g == j1)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano el Jugador 1 ";
+				m = true;
+				break;
+			}
+
+			
+			while(contador % 2 == 0){
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				srand(time(0));
+				int jugada_m = 1 + (rand()% 10);
+				system("cls");
+									
+				if((pos_a == true) && (pos_b == true) && (pos_c == true) && (pos_d == true) && (pos_e == true) && (pos_f == true) && (pos_g == true) && (pos_h == true) && (pos_i == true)){
+					if (m == false)
+						cout << "Empate" << endl;
+					else{
+						break;		
+						}
+				}				
+				else if(jugada_m == 0){
+						continue;
+				}
+						
+						
+				else if ((jugada_m == 1) && (pos_a == false)) {
+					a = j2;
+					pos_a = true;
+					contador = contador + 1;
+					system("cls");					
+				}
+				else if ((jugada_m == 1) && (pos_a == true)){
+					continue;
+				}
+						
+				else if ((jugada_m == 2) && (pos_b == false)) {
+					b = j2;
+					pos_b = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((jugada_m == 2) && (pos_b == true)){
+					continue;
+				}
+						
+						
+						
+				else if ((jugada_m == 3) && (pos_c == false)) {
+					c = j2;
+					pos_c = true;
+					contador = contador + 1;
+					system("cls");			
+				}				
+				else if ((jugada_m == 3) && (pos_c == true)){
+						continue;					
+				}
+						
+						
+				else if ((jugada_m == 4) && (pos_d == false)) {
+					d = j2;
+					pos_d = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((jugada_m == 4) && (pos_d == true)){
+					continue;
+				}
+						
+						
+						
+				else if ((jugada_m == 5) && (pos_e == false)) {
+					e = j2;
+					pos_e = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((jugada_m == 5) && (pos_e == true)){
+					continue;
+				}
+						
+						
+						
+				else if ((jugada_m == 6) && (pos_f == false)) {
+					f = j2;
+					pos_f = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((jugada_m == 6) && (pos_f == true)){
+					continue;
+				}
+						
+						
+						
+				else if ((jugada_m == 7) && (pos_g == false)) {
+					g = j2;
+					pos_g = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((jugada_m == 7) && (pos_g == true)){
+					continue;
+				}
+						
+						
+				else if ((jugada_m == 8) && (pos_h == false)) {
+					h = j2;
+					pos_h = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((jugada_m == 8) && (pos_h == true)){
+					continue;
+				}
+						
+						
+						
+				else if ((jugada_m == 9) && (pos_i == false)) {
+					i = j2;
+					pos_i = true;
+					contador = contador + 1;
+					system("cls");
+				}
+				else if ((jugada_m == 9) && (pos_i == true)){
+					continue;
+				}
+				
+				
+					
+
+
+			}
+			
+
+			if ((a == j2) && (b == j2) && (c == j2)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano la maquina ";
+				m = true;
+				break;
+			}
+			if ((d == j2) && (e == j2) && (f == j2)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano la maquina  ";
+				m = true;
+				break;
+			}
+			if ((g == j2) && (h == j2) && (i == j2)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano la maquina  ";
+				m = true;
+				break;
+			}
+			if ((a == j2) && (e == j2) && (i == j2)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano la maquina ";
+				m = true;
+				break;
+			}
+			if ((a == j2) && (d == j2) && (g == j2)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano la maquina  ";
+				m = true;
+				break;
+			}
+			if ((b == j2) && (e == j2) && (h == j2)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano la maquina ";
+				m = true;
+				break;
+			}
+			if ((c == j2) && (f == j2) && (i == j2)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano la maquina ";
+				m = true;
+				break;
+			}
+			if ((c == j2) && (e == j2) && (g == j2)) {
+				cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+				cout << "Gano la maquina  ";
+				m = true;
+				break;
+			}
+			
+		}
+		
+	}
+
+
+
+			
+		else{
+			cout << "\aLos valores no son validos";
+
+		}
+	}
+	
+	// MAQUINA MEDIO
+	
+	else if(dificultad == 2){
+		
+	//imprimimos el tablero
+
+    cout << "Aqui les mostraremos como funcionara el tablero: " << endl << endl;
+    cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+
+
+    //pedir x o 0
+
+    cout << "Jugador 1 : ingrese si quiere jugar con X o O " << endl;
+    cin >> j1;
+    if((j1 == 'X') || (j1 == 'O')){
+        if (j1 == 'O') {
+            j2 = 'X';
+
+        }
+	
+        else if (j1 == 'X') {
+            j2 = 'O';
+        }
+
+        cout << "El jugador 1 es:" << j1 << endl << "La maquina es :" << j2 << endl;
+
+    a = ' ';
+    b = ' ';
+    c = ' ';
+    d = ' ';
+    e = ' ';
+    f = ' ';
+    g = ' ';
+    h = ' ';
+    i = ' ';
+
+    char pos1;
+    char pos2;
+    int contador = 1;
+	char primera_jugada;
+    
+    while (contador <=9) {
+		
+		
+		if((pos_a == true) && (pos_b == true) && (pos_c == true) && (pos_d == true) && (pos_e == true) && (pos_f == true) && (pos_g == true) && (pos_h == true) && (pos_i == true)){
+				cout << "Empate" << endl;
+				break;
+			}
+			
+		while(contador % 2 == 1){
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+			cout << "Jugador 1 ,Ingrese la posicion:" << endl;
+			cin >> pos1;
+			system("cls");	
+			if((pos_a == true) && (pos_b == true) && (pos_c == true) && (pos_d == true) && (pos_e == true) && (pos_f == true) && (pos_g == true) && (pos_h == true) && (pos_i == true)){
+				cout << "Empate" << endl;
+				break;
+			}	
+/////////////////GUARDAR EN UNA VARIABLE LA PRIMERA JUGADA/////////////
+			if(contador == 1){
+
+				if (pos1 == 'a'){
+					primera_jugada = 'a';
+				}
+				else if ( pos1 == 'b'){
+					primera_jugada = 'b';
+				}
+				else if (pos1 == 'c'){
+					primera_jugada = 'c';
+				}
+				else if ( pos1 == 'd'){
+					primera_jugada = 'd';
+				}
+				else if ( pos1 == 'e'){
+					primera_jugada = 'e';
+				}
+				else if ( pos1 == 'f'){
+					primera_jugada = 'f';
+				}
+				else if ( pos1 == 'g'){
+					primera_jugada = 'g';
+				}
+				else if (pos1 == 'h'){
+					primera_jugada = 'h';
+				}
+				else if ( pos1 == 'i'){
+					primera_jugada = 'i';
+				}
+			}
+		
+
+//////EMPATE///////////////////////		
+			if((pos_a == true) && (pos_b == true) && (pos_c == true) && (pos_d == true) && (pos_e == true) && (pos_f == true) && (pos_g == true) && (pos_h == true) && (pos_i == true)){
+				cout << "Empate" << endl;
+				break;
+			}
+			
+//////JUGADA DEL JUGADOR////////////////
+			if ((pos1 == 'a') && (pos_a == false)) {
+				a = j1;
+				pos_a = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'a') && (pos_a == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}			
+
+
+			else if ((pos1 == 'b') && (pos_b == false)) {
+				b = j1;
+				pos_b = true;
+				contador = contador + 1;
+				system("cls");
+
+			}
+			else if ((pos1 == 'b') && (pos_b == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}	
+				
+				
+				
+			else if ((pos1 == 'c') && (pos_c == false)) {
+				c = j1;
+				pos_c = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'c') && (pos_c == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}	
+			   
+			   
+			else if ((pos1 == 'd') && (pos_d == false)) {
+				d = j1;
+				pos_d = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'd') && (pos_d == true)){
+					cout << "La casilla esta ocupada" << endl;
+				continue;
+			}	
+				
+			else if ((pos1 == 'e') && (pos_e == false)) {
+				e = j1;
+				pos_e = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'e') && (pos_e == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}
+
+				
+				
+			else if ((pos1 == 'f') && (pos_f == false)) {
+				f = j1;
+				pos_f = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'f') && (pos_f == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}	
+				
+				
+				
+			else if ((pos1 == 'g') && (pos_g == false)) {
+				g = j1;
+				pos_g = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'g') && (pos_g == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}
+
+				
+			   
+			else if ((pos1 == 'h') && (pos_h == false)) {
+				h = j1;
+				pos_h = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'h') && (pos_h == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}	
+			  
+
+
+			else if ((pos1 == 'i') && (pos_i == false)) {
+				i = j1;
+				pos_i = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'i') && (pos_i == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}	
+				
+        }
+		
+		
+////////////TURNO DE LA MAQUINA///////////////////////
+		while(contador % 2 == 0){
+		    cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+			srand(time(0));
+			int jugada_m = 1 + (rand()% 10);
+			bool p = false;
+			system("cls");
+							
+					
+//////////////////////CASO DE ALGÚN EMPATE///////////////////////				
+								
+			if((pos_a == true) && (pos_b == true) && (pos_c == true) && (pos_d == true) && (pos_e == true) && (pos_f == true) && (pos_g == true) && (pos_h == true) && (pos_i == true)){
+				cout << "Empate" << endl;
+				break;
+			}	
+			
+
+			
+//////////////////Buscando todas las situaciones como podría el jugador podría ganar//////////////////////////////////
+			
+			// x |   | 
+			//-----------
+			//   |   |  
+			//-----------
+			//   |   | x
+			//
+			
+			if((a == j1) && (i == j1) && (pos_e == false)){				
+				e = j2;
+				pos_e = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | x 
+			//-----------
+			//   |   |  
+			//-----------
+			// x |   |  
+			//
+			else if((c == j1) && (g == j1) && ( pos_e == false)){
+				e = j2;
+				pos_e = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | x 
+			//-----------
+			//   | x |  
+			//-----------
+			//   |   |  
+			//
+			else if((c == j1) && (e == j1) && (pos_g == false)){
+				g = j2;
+				pos_g = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   |  
+			//-----------
+			//   | x |  
+			//-----------
+			// x |   |  
+			//
+			else if((e == j1) && (g == j1) && (pos_c == false)){
+				c = j2;
+				pos_c = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			// x |   |  
+			//-----------
+			//   | x |  
+			//-----------
+			//   |   |  
+			//
+			else if((a == j1) && (e == j1) && (pos_i == false)){
+				i = j2;
+				pos_i = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   |  
+			//-----------
+			//   | x |  
+			//-----------
+			//   |   | x
+			//
+			else if((i == j1) && (e == j1) && (pos_a == false)){
+				a = j2;
+				pos_a = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   | x | x 
+			//-----------
+			//   |   |  
+			//-----------
+			//   |   |  
+			//
+			else if((c == j1) && (b == j1) && (pos_a == false)){
+				a = j2;
+				pos_a = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			// x | x |  
+			//-----------
+			//   |   |  
+			//-----------
+			//   |   |  
+			//
+			else if((a == j1) && (b == j1) && (pos_c == false)){
+				c = j2;
+				pos_c = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			// x |   |  
+			//-----------
+			// x |   |  
+			//-----------
+			//   |   |  
+			//
+			else if((a == j1) && (d == j1) && (pos_g == false)){
+				g = j2;
+				pos_g = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   |  
+			//-----------
+			// x |   |  
+			//-----------
+			// x |   |  
+			//
+			else if((g == j1) && (d == j1) && (pos_a == false)){
+				a = j2;
+				pos_a = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   |  
+			//-----------
+			//   |   |  
+			//-----------
+			//   | x | x
+			//
+			else if((h == j1) && (i == j1) && (pos_g == false)){
+				g = j2;
+				pos_g = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   |  
+			//-----------
+			//   |   |  
+			//-----------
+			// x | x |  
+			//
+			else if((g == j1) && (h == j1) && (pos_i == false)){
+				i = j2;
+				pos_i = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | x
+			//-----------
+			//   |   | x
+			//-----------
+			//   |   |  
+			//
+			else if((c == j1) && (f == j1) && (pos_i == false)){
+				i = j2;
+				pos_i = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   |  
+			//-----------
+			//   |   | x
+			//-----------
+			//   |   | x
+			//
+			else if((i == j1) && (f == j1) && (pos_c == false)){
+				c = j2;
+				pos_c = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			// x |   | x
+			//-----------
+			//   |   |  
+			//-----------
+			//   |   |  
+			//
+			else if((a == j1) && (c == j1) && (pos_b == false)){
+				b = j2;
+				pos_b = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			// x |   | 
+			//-----------
+			//   |   | 
+			//-----------
+			// x |   |  
+			//
+			else if((a == j1) && (g == j1) && (pos_d == false)){
+				d = j2;
+				pos_d = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | 
+			//-----------
+			//   |   | 
+			//-----------
+			// x |   | x 
+			//
+			else if((g == j1) && (i == j1) && (pos_h == false)){
+				h = j2;
+				pos_h = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | x
+			//-----------
+			//   |   | 
+			//-----------
+			//   |   | x
+			//
+			else if((c == j1) && (i == j1) && (pos_f == false)){
+				f = j2;
+				pos_f = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   | x | 
+			//-----------
+			//   | x | 
+			//-----------
+			//   |   |  
+			//
+			else if((b == j1) && (e == j1) && (pos_h == false)){
+				h = j2;
+				pos_h = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | 
+			//-----------
+			//   | x | 
+			//-----------
+			//   | x |  
+			//
+			else if((h == j1) && (e == j1) && (pos_b == false)){
+				b = j2;
+				pos_b = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | 
+			//-----------
+			// x | x | 
+			//-----------
+			//   |   |  
+			//
+			else if((d == j1) && (e == j1) && (pos_f == false)){
+				f = j2;
+				pos_f = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | 
+			//-----------
+			//   | x | x
+			//-----------
+			//   |   |  
+			//
+			else if((f == j1) && (e == j1) && (pos_d == false)){
+				d = j2;
+				pos_d = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | 
+			//-----------
+			// x |   | x
+			//-----------
+			//   |   |  
+			//
+			else if((d == j1) && (f == j1) && (pos_e == false)){
+				e = j2;
+				pos_e = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   | x | 
+			//-----------
+			//   |   | 
+			//-----------
+			//   | x |  
+			//		
+			else if((b == j1) && (h == j1) && (pos_e == false)){
+				pos_e = j2;
+				pos_e = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+				
+	/////////////////////////////////////////////////////////////////////////
+
+	//SI EL JUGADOR INICIO EN EL MEDIO/////////////////////////////////
+	
+	//Si luego de iniciar en el medio, va a alguna esquina
+		if(primera_jugada == 'e'){
+			if(contador == 2){
+				a = j2;
+				pos_a = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+		
+	////////////////////CASOS ESPECIALES//////////////////////////////////////////////////////////////
+	
+
+			//   |   | O    |      O |   |      |        |   | X     |      X |   |         
+			//-----------   |     -----------   |     -----------    |     -----------     	
+			//   | X |      |        | X |      |        | X |       |        | X |    
+			//-----------   |     -----------   |     ------------   |     -----------
+			// X |   |      |        |   | X    |      O |   |       |        |   | O
+			//              |  					|
+	
+			else if(contador == 4){
+			
+				if((e == j1) &&(g == j1) && (c == j2)){
+					a = j2;
+					pos_a = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+					}
+				else if((a == j2) && (e == j1) && (i == j1)){
+					c = j2;
+					pos_c = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+					
+					}
+				else if((g == j2) && (e == j1) && (c == j1)){
+					i = j2;
+					pos_i = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+					
+					}
+				else if((i == j2) && (a == j1) && (e == j1)){
+					g = j2;
+					pos_g = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+					
+					}
+		
+				}
+		}
+	////////////////////CASOS ESPECIAL///////////////////////////////
+	//////////////////SI INICIA EN UNA ESQUINA//////////////////////////
+	
+	else if((primera_jugada == 'a') || (primera_jugada == 'c') || ( primera_jugada == 'g') || (primera_jugada == 'i')){
+		if(contador == 2){
+			e = j2;
+			pos_e = true;
+			contador = contador + 1;
+			p = true;
+			system("cls");
+		}
+		if(contador == 4){
+			// X |   |      |      X |   |  
+			//-----------   |     -----------   
+			//   | O |      |        | O | X  
+			//-----------   |     -----------
+			//   | X |      |        |   | 
+			//              | 
+			if((primera_jugada == 'a') && ((f == j1) || (h == j1))){
+				if(f == j1){
+					b = j2;
+					pos_b = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+				else if(h == j1){
+					d = j2;
+					pos_d = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+			}
+			//   |   | X    |        |   | X
+			//-----------   |     -----------   
+			// X | O |      |        | O |   
+			//-----------   |     -----------
+			//   |   |      |        | X | 
+			//              | 
+			if((primera_jugada == 'c') && ((d == j1) || (h == j1))){
+				if(d == j1){
+					b = j2;
+					pos_b = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+				else if(h == j1){
+					f = j2;
+					pos_f = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+			}
+			//   | X |      |        |   |  
+			//-----------   |     -----------   
+			//   | O |      |        | O | X  
+			//-----------   |     -----------
+			// X |   |      |      X |   | 
+			//              | 
+			if((primera_jugada == 'g') && ((b == j1) || (f == j1))){
+				if(b == j1){
+					d = j2;
+					pos_d = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+				else if(f == j1){
+					h = j2;
+					pos_h = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+			}
+			//   |   |      |        | X |  
+			//-----------   |     -----------   
+			// X | O |      |        | O |   
+			//-----------   |     -----------
+			//   |   | X    |        |   | X
+			//              | 
+			if((primera_jugada == 'i') && ((b == j1) || (d == j1))){
+				if(b == j1){
+					f = j2;
+					pos_f = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+				else if(d == j1){
+					h = j2;
+					pos_h = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+			}
+			
+			//   |   | X    |      X |   |         
+			//-----------   |     -----------   	
+			//   | O |      |        | O |     
+			//-----------   |     -----------   
+			// X |   |      |        |   | X    
+			//        		|  				
+
+			if(((c == j1) && ( g == j1) && ( e == j2)) || ((a == j1) && ( i == j1) && ( e == j2))){
+				
+				b = j2;
+				pos_b = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			
+		
+				
+		}
+	
+	}
+	
+	
+	
+	////////////////SI INICIA EN UN LATERAL//////////////////
+	
+	if((primera_jugada == 'b') || ( primera_jugada == 'd') || (primera_jugada == 'f') || ( primera_jugada == 'h')){
+		if(contador == 2){
+			e = j2;
+			pos_e = true;
+			contador = contador + 1;
+			p = true;
+			system("cls");
+		}
+		//////////////CASOS ESPECIALES/////////////////////////////
+		
+			//   | X |      |        | X |      |        |   |       |        |   |         
+			//-----------   |     -----------   |     -----------    |     -----------     	
+			// X | O |      |        | O | X    |        | O | X     |      X | O |    
+			//-----------   |     -----------   |     ------------   |     -----------
+			//   |   |      |        |   |      |        | X |       |        | X | 
+			//        		|  					|				     |
+			
+			
+		else if(contador = 4){
+			//1
+			if((b == j1) && (d == j1) && (pos_a == false)){
+				a = j2;
+				pos_a = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//2 
+			else if((b == j1) && (f == j1) && (pos_c == false)){
+				c = j2;
+				pos_c = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//3
+			else if((f == j1) && (h == j1) && (pos_i == false)){
+				i = j2;
+				pos_i = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//4
+			else if((d == j1) && (h == j1) && (pos_g == false)){
+				g = j2;
+				pos_g = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+	}
+	}
+	
+	
+	//////ESTE IF SOLO SUCEDE SI NO HAY NINGUNA JUGABDA QUE BLOQUEAR Y JUEGA AL AZAR
+	
+	
+			if ((jugada_m == 1) && (pos_a == false) && (p == false)) {
+				a = j2;
+				pos_a = true;
+				contador = contador + 1;
+				system("cls");					
+			}
+			else if ((jugada_m == 1) && (pos_a == true) && (p == false)){
+				continue;
+			}
+					
+			else if ((jugada_m == 2) && (pos_b == false) && (p == false)) {
+				b = j2;
+				pos_b = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((jugada_m == 2) && (pos_b == true) && (p == false)){
+				continue;
+			}
+					
+					
+					
+			else if ((jugada_m == 3) && (pos_c == false) && (p == false)) {
+				c = j2;
+				pos_c = true;
+				contador = contador + 1;
+				system("cls");			
+			}				
+			else if ((jugada_m == 3) && (pos_c == true) && (p == false)){
+					continue;					
+			}
+					
+					
+			else if ((jugada_m == 4) && (pos_d == false) && (p == false)) {
+				d = j2;
+				pos_d = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((jugada_m == 4) && (pos_d == true) && (p == false)){
+				continue;
+			}
+					
+					
+					
+			else if ((jugada_m == 5) && (pos_e == false) && (p == false)) {
+				e = j2;
+				pos_e = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((jugada_m == 5) && (pos_e == true) && (p == false)){
+				continue;
+			}
+					
+					
+					
+			else if ((jugada_m == 6) && (pos_f == false) && (p == false)) {
+				f = j2;
+				pos_f = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((jugada_m == 6) && (pos_f == true) && (p == false)){
+				continue;
+			}
+					
+					
+					
+			else if ((jugada_m == 7) && (pos_g == false) && (p == false)) {
+				g = j2;
+				pos_g = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((jugada_m == 7) && (pos_g == true) && (p == false)){
+				continue;
+			}
+					
+					
+			else if ((jugada_m == 8) && (pos_h == false) && (p == false)) {
+				h = j2;
+				pos_h = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((jugada_m == 8) && (pos_h == true) && (p == false)){
+				continue;
+			}
+					
+					
+					
+			else if ((jugada_m == 9) && (pos_i == false) && (p == false)) {
+				i = j2;
+				pos_i = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((jugada_m == 9) && (pos_i == true) && (p == false)){
+				continue;
+			}				
+					
+					
+					
+					
+					
+
+			
+			
+				
+
+
+        }
+		
+///////////VICTORIAS O DERROTAS//////////////////////////////
+
+        
+        if ((a == j1) && (b == j1) && (c == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((d == j1) && (e == j1) && (f == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((g == j1) && (h == j1) && (i == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((a == j1) && (e == j1) && (i == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((a == j1) && (d == j1) && (g == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((b == j1) && (e == j1) && (h == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((c == j1) && (f == j1) && (i == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((c == j1) && (e == j1) && (g == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+
+        if ((a == j2) && (b == j2) && (c == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina ";
+            m = true;
+            break;
+        }
+        if ((d == j2) && (e == j2) && (f == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina  ";
+            m = true;
+            break;
+        }
+        if ((g == j2) && (h == j2) && (i == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina  ";
+            m = true;
+            break;
+        }
+        if ((a == j2) && (e == j2) && (i == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina ";
+            m = true;
+            break;
+        }
+        if ((a == j2) && (d == j2) && (g == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina  ";
+            m = true;
+            break;
+        }
+        if ((b == j2) && (e == j2) && (h == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina ";
+            m = true;
+            break;
+        }
+        if ((c == j2) && (f == j2) && (i == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina ";
+            m = true;
+            break;
+        }
+        if ((c == j2) && (e == j2) && (g == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina  ";
+            m = true;
+            break;
+        }
+	
+	}
+	
+
+	}
+	     
+    else{
+        cout << "\aLos valores no son validos";
+
+    }
+		
+		
+
+
+	}
+    
+	//MAQUINA DIFICIL
+	
+	else if(dificultad == 3){
+	//imprimimos el tablero
+    cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+
+
+    //pedir x o 0
+
+    cout << "Jugador 1 : ingrese si quiere jugar con X o O " << endl;
+    cin >> j1;
+    if((j1 == 'X') || (j1 == 'O')){
+        if (j1 == 'O') {
+            j2 = 'X';
+
+        }
+	
+        else if (j1 == 'X') {
+            j2 = 'O';
+        }
+
+        cout << "El jugador 1 es:" << j1 << endl << "La maquina es :" << j2 << endl;
+
+    a = ' ';
+    b = ' ';
+    c = ' ';
+    d = ' ';
+    e = ' ';
+    f = ' ';
+    g = ' ';
+    h = ' ';
+    i = ' ';
+
+    char pos1;
+    char pos2;
+    int contador = 1;
+	char primera_jugada;
+    
+    while (contador <=9) {
+		
+		
+		if((pos_a == true) && (pos_b == true) && (pos_c == true) && (pos_d == true) && (pos_e == true) && (pos_f == true) && (pos_g == true) && (pos_h == true) && (pos_i == true)){
+				cout << "Empate" << endl;
+				break;
+			}
+			
+		while(contador % 2 == 1){
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+			cout << "Jugador 1 ,Ingrese la posicion:" << endl;
+			cin >> pos1;
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+			system("cls");	
+			if((pos_a == true) && (pos_b == true) && (pos_c == true) && (pos_d == true) && (pos_e == true) && (pos_f == true) && (pos_g == true) && (pos_h == true) && (pos_i == true)){
+				cout << "Empate" << endl;
+				break;
+			}	
+/////////////////GUARDAR EN UNA VARIABLE LA PRIMERA JUGADA/////////////
+			if(contador == 1){
+				if (pos1 == 'a'){
+					primera_jugada = 'a';
+				}
+				else if ( pos1 == 'b'){
+					primera_jugada = 'b';
+				}
+				else if (pos1 == 'c'){
+					primera_jugada = 'c';
+				}
+				else if ( pos1 == 'd'){
+					primera_jugada = 'd';
+				}
+				else if ( pos1 == 'e'){
+					primera_jugada = 'e';
+				}
+				else if ( pos1 == 'f'){
+					primera_jugada = 'f';
+				}
+				else if ( pos1 == 'g'){
+					primera_jugada = 'g';
+				}
+				else if (pos1 == 'h'){
+					primera_jugada = 'h';
+				}
+				else if ( pos1 == 'i'){
+					primera_jugada = 'i';
+				}
+			}
+								
+			if((pos_a == true) && (pos_b == true) && (pos_c == true) && (pos_d == true) && (pos_e == true) && (pos_f == true) && (pos_g == true) && (pos_h == true) && (pos_i == true)){
+				cout << "Empate" << endl;
+				break;
+			}
+			
+			
+			if ((pos1 == 'a') && (pos_a == false)) {
+				a = j1;
+				pos_a = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'a') && (pos_a == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}			
+
+
+			else if ((pos1 == 'b') && (pos_b == false)) {
+				b = j1;
+				pos_b = true;
+				contador = contador + 1;
+				system("cls");
+
+			}
+			else if ((pos1 == 'b') && (pos_b == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}	
+				
+				
+				
+			else if ((pos1 == 'c') && (pos_c == false)) {
+				c = j1;
+				pos_c = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'c') && (pos_c == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}	
+			   
+			   
+			else if ((pos1 == 'd') && (pos_d == false)) {
+				d = j1;
+				pos_d = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'd') && (pos_d == true)){
+					cout << "La casilla esta ocupada" << endl;
+				continue;
+			}	
+				
+			else if ((pos1 == 'e') && (pos_e == false)) {
+				e = j1;
+				pos_e = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'e') && (pos_e == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}
+
+				
+				
+			else if ((pos1 == 'f') && (pos_f == false)) {
+				f = j1;
+				pos_f = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'f') && (pos_f == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}	
+				
+				
+				
+			else if ((pos1 == 'g') && (pos_g == false)) {
+				g = j1;
+				pos_g = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'g') && (pos_g == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}
+
+				
+			   
+			else if ((pos1 == 'h') && (pos_h == false)) {
+				h = j1;
+				pos_h = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'h') && (pos_h == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}	
+			  
+
+
+			else if ((pos1 == 'i') && (pos_i == false)) {
+				i = j1;
+				pos_i = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((pos1 == 'i') && (pos_i == true)){
+				cout << "La casilla esta ocupada" << endl;
+				continue;
+			}	
+				
+        }
+		
+		
+//////TURNO DE LA MAQUINA///////////////////////
+		while(contador % 2 == 0){
+		    cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+			srand(time(0));
+			int jugada_m = 1 + (rand()% 10);
+			bool p = false;
+			system("cls");
+							
+					
+//////////////////////CASO DE ALGÚN EMPATE///////////////////////				
+								
+			if((pos_a == true) && (pos_b == true) && (pos_c == true) && (pos_d == true) && (pos_e == true) && (pos_f == true) && (pos_g == true) && (pos_h == true) && (pos_i == true)){
+				cout << "Empate" << endl;
+				break;
+			}	
+			
+////CASO DE ALGUNA VICTORIA///////////////////
+			
+			// x |   | 
+			//-----------
+			//   |   |  
+			//-----------
+			//   |   | x
+			//
+			
+			if((a == j2) && (i == j2) && (pos_e == false)){
+				e = j2;
+				m = true;
+				break;
+			}
+			//   |   | x 
+			//-----------
+			//   |   |  
+			//-----------
+			// x |   |  
+			//
+			if((c == j2) && (g == j2) && ( pos_e == false)){
+				e = j2;
+				m = true;
+				break;
+			}
+			//   |   | x 
+			//-----------
+			//   | x |  
+			//-----------
+			//   |   |  
+			//
+			if((c == j2) && (e == j2) && ( pos_g == false)){
+				g = j2;
+				m = true;
+				break;
+			}
+			//   |   |  
+			//-----------
+			//   | x |  
+			//-----------
+			// x |   |  
+			//
+			if((e == j2) && (g == j2) && (pos_c == false)){
+				c = j2;
+				m = true;
+				break;
+			}
+			// x |   |  
+			//-----------
+			//   | x |  
+			//-----------
+			//   |   |  
+			//
+			if((a == j2) && (e == j2) && ( pos_i == false)){
+				i = j2;
+				m = true;
+				break;
+			}
+			//   |   |  
+			//-----------
+			//   | x |  
+			//-----------
+			//   |   | x
+			//
+			if((i == j2) && (e == j2) && ( pos_a == false)){
+				a = j2;
+				m = true;
+				break;
+			}
+			//   | x | x 
+			//-----------
+			//   |   |  
+			//-----------
+			//   |   |  
+			//
+			if((c == j2) && (b == j2) && ( pos_a == false)){
+				a = j2;
+				m = true;
+				break;
+			}
+			// x | x |  
+			//-----------
+			//   |   |  
+			//-----------
+			//   |   |  
+			//
+			if((a == j2) && (b == j2) && ( pos_c == false)){
+				c = j2;
+				m = true;
+				break;
+			}
+			// x |   |  
+			//-----------
+			// x |   |  
+			//-----------
+			//   |   |  
+			//
+			if((a == j2) && (d == j2) && (pos_g == false)){
+				g = j2;
+				m = true;
+				break;
+			}
+			//   |   |  
+			//-----------
+			// x |   |  
+			//-----------
+			// x |   |  
+			//
+			if((g == j2) && (d == j2) && ( pos_a == false)){
+				a = j2;
+				m = true;
+				break;
+			}
+			//   |   |  
+			//-----------
+			//   |   |  
+			//-----------
+			//   | x | x
+			//
+			if((h == j2) && (i == j2) && ( pos_g == false)){
+				g = j2;
+				m = true;
+				break;
+			}
+			//   |   |  
+			//-----------
+			//   |   |  
+			//-----------
+			// x | x |  
+			//
+			if((g == j2) && (h == j2) && ( pos_i == false)){
+				i = j2;
+				m = true;
+				break;
+			}
+			//   |   | x
+			//-----------
+			//   |   | x
+			//-----------
+			//   |   |  
+			//
+			if((c == j2) && (f == j2) && ( pos_i == false)){
+				i = j2;
+				m = true;
+				break;
+			}
+			//   |   |  
+			//-----------
+			//   |   | x
+			//-----------
+			//   |   | x
+			//
+			if((i == j2) && (f == j2) && ( pos_c == false)){
+				c = j2;
+				m = true;
+				break;
+			}
+			// x |   | x
+			//-----------
+			//   |   |  
+			//-----------
+			//   |   |  
+			//
+			if((a == j2) && (c == j2) && ( pos_b == false)){
+				b = j2;
+				m = true;
+				break;
+			}
+			// x |   | 
+			//-----------
+			//   |   | 
+			//-----------
+			// x |   |  
+			//
+			if((a == j2) && (g == j2) && ( pos_d == false)){
+				d = j2;
+				m = true;
+				break;
+			}
+			//   |   | 
+			//-----------
+			//   |   | 
+			//-----------
+			// x |   | x 
+			//
+			if((g == j2) && (i == j2) && ( pos_h == false)){
+				h = j2;
+				m = true;
+				break;
+			}
+			//   |   | x
+			//-----------
+			//   |   | 
+			//-----------
+			//   |   | x
+			//
+			if((c == j2) && (i == j2) && ( pos_f == false)){
+				f = j2;
+				m = true;
+				break;
+			}
+			//   | x | 
+			//-----------
+			//   | x | 
+			//-----------
+			//   |   |  
+			//
+			if((b == j2) && (e == j2) && ( pos_h == false)){
+				h = j2;
+				m = true;
+				break;
+			}
+			//   |   | 
+			//-----------
+			//   | x | 
+			//-----------
+			//   | x |  
+			//
+			if((h == j2) && (e == j2) && ( pos_b == false)){
+				b = j2;
+				m = true;
+				break;
+			}
+			//   |   | 
+			//-----------
+			// x | x | 
+			//-----------
+			//   |   |  
+			//
+			if((d == j2) && (e == j2) && (pos_f == false)){
+				h = j2;
+				m = true;
+				break;
+			}
+			//   |   | 
+			//-----------
+			//   | x | x
+			//-----------
+			//   |   |  
+			//
+			if((f == j2) && (e == j2) && (pos_d == false)){
+				d = j2;
+				m = true;
+				break;
+			}
+			//   |   | 
+			//-----------
+			// x |   | x
+			//-----------
+			//   |   |  
+			//
+			if((d == j2) && (f == j2) && (pos_e == false)){
+				e = j2;
+				m = true;
+				break;
+			}
+			
+						
+
+			
+//////////////////Buscando todas las situaciones como podría el jugador podría ganar//////////////////////////////////
+			
+			// x |   | 
+			//-----------
+			//   |   |  
+			//-----------
+			//   |   | x
+			//
+			
+			if((a == j1) && (i == j1) && (pos_e == false)){				
+				e = j2;
+				pos_e = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | x 
+			//-----------
+			//   |   |  
+			//-----------
+			// x |   |  
+			//
+			else if((c == j1) && (g == j1) && ( pos_e == false)){
+				e = j2;
+				pos_e = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | x 
+			//-----------
+			//   | x |  
+			//-----------
+			//   |   |  
+			//
+			else if((c == j1) && (e == j1) && (pos_g == false)){
+				g = j2;
+				pos_g = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   |  
+			//-----------
+			//   | x |  
+			//-----------
+			// x |   |  
+			//
+			else if((e == j1) && (g == j1) && (pos_c == false)){
+				c = j2;
+				pos_c = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			// x |   |  
+			//-----------
+			//   | x |  
+			//-----------
+			//   |   |  
+			//
+			else if((a == j1) && (e == j1) && (pos_i == false)){
+				i = j2;
+				pos_i = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   |  
+			//-----------
+			//   | x |  
+			//-----------
+			//   |   | x
+			//
+			else if((i == j1) && (e == j1) && (pos_a == false)){
+				a = j2;
+				pos_a = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   | x | x 
+			//-----------
+			//   |   |  
+			//-----------
+			//   |   |  
+			//
+			else if((c == j1) && (b == j1) && (pos_a == false)){
+				a = j2;
+				pos_a = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			// x | x |  
+			//-----------
+			//   |   |  
+			//-----------
+			//   |   |  
+			//
+			else if((a == j1) && (b == j1) && (pos_c == false)){
+				c = j2;
+				pos_c = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			// x |   |  
+			//-----------
+			// x |   |  
+			//-----------
+			//   |   |  
+			//
+			else if((a == j1) && (d == j1) && (pos_g == false)){
+				g = j2;
+				pos_g = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   |  
+			//-----------
+			// x |   |  
+			//-----------
+			// x |   |  
+			//
+			else if((g == j1) && (d == j1) && (pos_a == false)){
+				a = j2;
+				pos_a = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   |  
+			//-----------
+			//   |   |  
+			//-----------
+			//   | x | x
+			//
+			else if((h == j1) && (i == j1) && (pos_g == false)){
+				g = j2;
+				pos_g = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   |  
+			//-----------
+			//   |   |  
+			//-----------
+			// x | x |  
+			//
+			else if((g == j1) && (h == j1) && (pos_i == false)){
+				i = j2;
+				pos_i = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | x
+			//-----------
+			//   |   | x
+			//-----------
+			//   |   |  
+			//
+			else if((c == j1) && (f == j1) && (pos_i == false)){
+				i = j2;
+				pos_i = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   |  
+			//-----------
+			//   |   | x
+			//-----------
+			//   |   | x
+			//
+			else if((i == j1) && (f == j1) && (pos_c == false)){
+				c = j2;
+				pos_c = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			// x |   | x
+			//-----------
+			//   |   |  
+			//-----------
+			//   |   |  
+			//
+			else if((a == j1) && (c == j1) && (pos_b == false)){
+				b = j2;
+				pos_b = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			// x |   | 
+			//-----------
+			//   |   | 
+			//-----------
+			// x |   |  
+			//
+			else if((a == j1) && (g == j1) && (pos_d == false)){
+				d = j2;
+				pos_d = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | 
+			//-----------
+			//   |   | 
+			//-----------
+			// x |   | x 
+			//
+			else if((g == j1) && (i == j1) && (pos_h == false)){
+				h = j2;
+				pos_h = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | x
+			//-----------
+			//   |   | 
+			//-----------
+			//   |   | x
+			//
+			else if((c == j1) && (i == j1) && (pos_f == false)){
+				f = j2;
+				pos_f = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   | x | 
+			//-----------
+			//   | x | 
+			//-----------
+			//   |   |  
+			//
+			else if((b == j1) && (e == j1) && (pos_h == false)){
+				h = j2;
+				pos_h = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | 
+			//-----------
+			//   | x | 
+			//-----------
+			//   | x |  
+			//
+			else if((h == j1) && (e == j1) && (pos_b == false)){
+				b = j2;
+				pos_b = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | 
+			//-----------
+			// x | x | 
+			//-----------
+			//   |   |  
+			//
+			else if((d == j1) && (e == j1) && (pos_f == false)){
+				f = j2;
+				pos_f = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | 
+			//-----------
+			//   | x | x
+			//-----------
+			//   |   |  
+			//
+			else if((f == j1) && (e == j1) && (pos_d == false)){
+				d = j2;
+				pos_d = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   |   | 
+			//-----------
+			// x |   | x
+			//-----------
+			//   |   |  
+			//
+			else if((d == j1) && (f == j1) && (pos_e == false)){
+				e = j2;
+				pos_e = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//   | x | 
+			//-----------
+			//   |   | 
+			//-----------
+			//   | x |  
+			//		
+			else if((b == j1) && (h == j1) && (pos_e == false)){
+				pos_e = j2;
+				pos_e = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+				
+	/////////////////////////////////////////////////////////////////////////
+
+	//SI EL JUGADOR INICIO EN EL MEDIO/////////////////////////////////
+	
+	//Si luego de iniciar en el medio, va a alguna esquina
+		if(primera_jugada == 'e'){
+			if(contador == 2){
+				a = j2;
+				pos_a = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+		
+	////////////////////CASOS ESPECIALES//////////////////////////////////////////////////////////////
+	
+
+			//   |   | O    |      O |   |      |        |   | X     |      X |   |         
+			//-----------   |     -----------   |     -----------    |     -----------     	
+			//   | X |      |        | X |      |        | X |       |        | X |    
+			//-----------   |     -----------   |     ------------   |     -----------
+			// X |   |      |        |   | X    |      O |   |       |        |   | O
+			//              |  					|
+	
+			else if(contador == 4){
+			
+				if((e == j1) &&(g == j1) && (c == j2)){
+					a = j2;
+					pos_a = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+					}
+				else if((a == j2) && (e == j1) && (i == j1)){
+					c = j2;
+					pos_c = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+					
+					}
+				else if((g == j2) && (e == j1) && (c == j1)){
+					i = j2;
+					pos_i = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+					
+					}
+				else if((i == j2) && (a == j1) && (e == j1)){
+					g = j2;
+					pos_g = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+					
+					}
+		
+				}
+		}
+	////////////////////CASOS ESPECIAL///////////////////////////////
+	//////////////////SI INICIA EN UNA ESQUINA//////////////////////////
+	
+	else if((primera_jugada == 'a') || (primera_jugada == 'c') || ( primera_jugada == 'g') || (primera_jugada == 'i')){
+		if(contador == 2){
+			e = j2;
+			pos_e = true;
+			contador = contador + 1;
+			p = true;
+			system("cls");
+		}
+		if(contador == 4){
+			// X |   |      |      X |   |  
+			//-----------   |     -----------   
+			//   | O |      |        | O | X  
+			//-----------   |     -----------
+			//   | X |      |        |   | 
+			//              | 
+			if((primera_jugada == 'a') && ((f == j1) || (h == j1))){
+				if(f == j1){
+					b = j2;
+					pos_b = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+				else if(h == j1){
+					d = j2;
+					pos_d = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+			}
+			//   |   | X    |        |   | X
+			//-----------   |     -----------   
+			// X | O |      |        | O |   
+			//-----------   |     -----------
+			//   |   |      |        | X | 
+			//              | 
+			if((primera_jugada == 'c') && ((d == j1) || (h == j1))){
+				if(d == j1){
+					b = j2;
+					pos_b = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+				else if(h == j1){
+					f = j2;
+					pos_f = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+			}
+			//   | X |      |        |   |  
+			//-----------   |     -----------   
+			//   | O |      |        | O | X  
+			//-----------   |     -----------
+			// X |   |      |      X |   | 
+			//              | 
+			if((primera_jugada == 'g') && ((b == j1) || (f == j1))){
+				if(b == j1){
+					d = j2;
+					pos_d = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+				else if(f == j1){
+					h = j2;
+					pos_h = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+			}
+			//   |   |      |        | X |  
+			//-----------   |     -----------   
+			// X | O |      |        | O |   
+			//-----------   |     -----------
+			//   |   | X    |        |   | X
+			//              | 
+			if((primera_jugada == 'i') && ((b == j1) || (d == j1))){
+				if(b == j1){
+					f = j2;
+					pos_f = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+				else if(d == j1){
+					h = j2;
+					pos_h = true;
+					contador = contador + 1;
+					p = true;
+					system("cls");
+				}
+			}
+			
+			//   |   | X    |      X |   |         
+			//-----------   |     -----------   	
+			//   | O |      |        | O |     
+			//-----------   |     -----------   
+			// X |   |      |        |   | X    
+			//        		|  				
+
+			if(((c == j1) && ( g == j1) && ( e == j2)) || ((a == j1) && ( i == j1) && ( e == j2))){
+				
+				b = j2;
+				pos_b = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			
+		
+				
+		}
+	
+	}
+	
+	
+	
+	////////////////SI INICIA EN UN LATERAL//////////////////
+	
+	if((primera_jugada == 'b') || ( primera_jugada == 'd') || (primera_jugada == 'f') || ( primera_jugada == 'h')){
+		if(contador == 2){
+			e = j2;
+			pos_e = true;
+			contador = contador + 1;
+			p = true;
+			system("cls");
+		}
+		//////////////CASOS ESPECIALES/////////////////////////////
+		
+			//   | X |      |        | X |      |        |   |       |        |   |         
+			//-----------   |     -----------   |     -----------    |     -----------     	
+			// X | O |      |        | O | X    |        | O | X     |      X | O |    
+			//-----------   |     -----------   |     ------------   |     -----------
+			//   |   |      |        |   |      |        | X |       |        | X | 
+			//        		|  					|				     |
+			
+			
+		else if(contador = 4){
+			//1
+			if((b == j1) && (d == j1) && (pos_a == false)){
+				a = j2;
+				pos_a = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//2 
+			else if((b == j1) && (f == j1) && (pos_c == false)){
+				c = j2;
+				pos_c = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//3
+			else if((f == j1) && (h == j1) && (pos_i == false)){
+				i = j2;
+				pos_i = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+			//4
+			else if((d == j1) && (h == j1) && (pos_g == false)){
+				g = j2;
+				pos_g = true;
+				contador = contador + 1;
+				p = true;
+				system("cls");
+			}
+	}
+	}
+	
+	
+	//////ESTE IF SOLO SUCEDE SI NO HAY NINGUNA JUGABDA QUE BLOQUEAR O ALGUNA POSIBILIDAD DE GANAR Y JUEGA AL AZAR
+	
+	
+			if ((jugada_m == 1) && (pos_a == false) && (p == false)) {
+				a = j2;
+				pos_a = true;
+				contador = contador + 1;
+				system("cls");					
+			}
+			else if ((jugada_m == 1) && (pos_a == true) && (p == false)){
+				continue;
+			}
+					
+			else if ((jugada_m == 2) && (pos_b == false) && (p == false)) {
+				b = j2;
+				pos_b = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((jugada_m == 2) && (pos_b == true) && (p == false)){
+				continue;
+			}
+					
+					
+					
+			else if ((jugada_m == 3) && (pos_c == false) && (p == false)) {
+				c = j2;
+				pos_c = true;
+				contador = contador + 1;
+				system("cls");			
+			}				
+			else if ((jugada_m == 3) && (pos_c == true) && (p == false)){
+					continue;					
+			}
+					
+					
+			else if ((jugada_m == 4) && (pos_d == false) && (p == false)) {
+				d = j2;
+				pos_d = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((jugada_m == 4) && (pos_d == true) && (p == false)){
+				continue;
+			}
+					
+					
+					
+			else if ((jugada_m == 5) && (pos_e == false) && (p == false)) {
+				e = j2;
+				pos_e = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((jugada_m == 5) && (pos_e == true) && (p == false)){
+				continue;
+			}
+					
+					
+					
+			else if ((jugada_m == 6) && (pos_f == false) && (p == false)) {
+				f = j2;
+				pos_f = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((jugada_m == 6) && (pos_f == true) && (p == false)){
+				continue;
+			}
+					
+					
+					
+			else if ((jugada_m == 7) && (pos_g == false) && (p == false)) {
+				g = j2;
+				pos_g = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((jugada_m == 7) && (pos_g == true) && (p == false)){
+				continue;
+			}
+					
+					
+			else if ((jugada_m == 8) && (pos_h == false) && (p == false)) {
+				h = j2;
+				pos_h = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((jugada_m == 8) && (pos_h == true) && (p == false)){
+				continue;
+			}
+					
+					
+					
+			else if ((jugada_m == 9) && (pos_i == false) && (p == false)) {
+				i = j2;
+				pos_i = true;
+				contador = contador + 1;
+				system("cls");
+			}
+			else if ((jugada_m == 9) && (pos_i == true) && (p == false)){
+				continue;
+			}				
+					
+					
+					
+					
+					
+
+			
+			
+				
+
+
+        }
+		
+
+
+        
+        if ((a == j1) && (b == j1) && (c == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((d == j1) && (e == j1) && (f == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((g == j1) && (h == j1) && (i == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((a == j1) && (e == j1) && (i == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((a == j1) && (d == j1) && (g == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((b == j1) && (e == j1) && (h == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((c == j1) && (f == j1) && (i == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+        if ((c == j1) && (e == j1) && (g == j1)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano el Jugador 1 ";
+            m = true;
+            break;
+        }
+
+        if ((a == j2) && (b == j2) && (c == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina ";
+            m = true;
+            break;
+        }
+        if ((d == j2) && (e == j2) && (f == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina  ";
+            m = true;
+            break;
+        }
+        if ((g == j2) && (h == j2) && (i == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina  ";
+            m = true;
+            break;
+        }
+        if ((a == j2) && (e == j2) && (i == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina ";
+            m = true;
+            break;
+        }
+        if ((a == j2) && (d == j2) && (g == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina  ";
+            m = true;
+            break;
+        }
+        if ((b == j2) && (e == j2) && (h == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina ";
+            m = true;
+            break;
+        }
+        if ((c == j2) && (f == j2) && (i == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina ";
+            m = true;
+            break;
+        }
+        if ((c == j2) && (e == j2) && (g == j2)) {
+			cout << " " << a << " " << "|" << " " << b << " " << "|" << " " << c << " " << endl << "-----------" << endl << " " << d << " " << "|" << " " << e << " " << "|" << " " << f << " " << endl << "-----------" << endl << " " << g << " " << "|" << " " << h << " " << "|" << " " << i << " " << endl << endl;
+            cout << "Gano la maquina  ";
+            m = true;
+            break;
+        }
+	
+	}
+	
+
+	}
+	     
+    else{
+        cout << "\aLos valores no son validos";
+
+    }
+	
+	
+	
+}
+	
+	
+	return 0;
+
+
+}
